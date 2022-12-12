@@ -6,7 +6,6 @@
 package xyz.zerofish123.villagertraderplus;
 
 import java.util.Arrays;
-//import net.minecraft.util.logging.LoggerPrintStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.minecraft.client.MinecraftClient;
@@ -68,19 +67,14 @@ public class BetterGuiMerchant extends MerchantScreen implements AutoTrade {
             address = "none";
         }
 
-        if(isLogTriggered == false) {
-
-            //LoggerPrintStream logger = new LoggerPrintStream("VTradePlus", null);
-            //System.setOut(logger);
-            //System.out.println(address);
-            this.logger.info("Server Address: " + address);
-            isLogTriggered = true;
-
-        }
-
         String[] whitelistedServers = ConfigurationHandler.whitelistedServerAddress().split(",");
 
         if(!Arrays.asList(whitelistedServers).contains(address)) {
+            if(isLogTriggered == false) {
+                this.logger.info("[VTradePlus] [Info]: Server Address: " + address);
+                this.logger.info("[VTradePlus] [Info]: This server is not whitelisted!");
+                isLogTriggered = true;
+            }
             return false;
         }
 
