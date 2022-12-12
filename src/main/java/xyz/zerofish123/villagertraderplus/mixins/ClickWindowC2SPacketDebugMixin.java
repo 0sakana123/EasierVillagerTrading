@@ -1,4 +1,4 @@
-package de.guntram.mcmod.easiervillagertrading.mixins;
+package xyz.zerofish123.villagertraderplus.mixins;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.item.ItemStack;

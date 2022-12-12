@@ -1,4 +1,4 @@
-package de.guntram.mcmod.easiervillagertrading;
+package xyz.zerofish123.villagertraderplus;
 
 import de.guntram.mcmod.fabrictools.ConfigurationProvider;
 import net.fabricmc.api.ClientModInitializer;

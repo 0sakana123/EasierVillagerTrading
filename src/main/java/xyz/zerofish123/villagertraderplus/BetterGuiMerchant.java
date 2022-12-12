@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.guntram.mcmod.easiervillagertrading;
+package xyz.zerofish123.villagertraderplus;
 
+import java.util.Arrays;
+//import net.minecraft.util.logging.LoggerPrintStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.MerchantScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -14,6 +19,7 @@ import net.minecraft.text.Text;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
 
+
 /**
  *
  * @author gbl
@@ -21,10 +27,13 @@ import net.minecraft.village.TradeOfferList;
 public class BetterGuiMerchant extends MerchantScreen implements AutoTrade {
     
     private int frames;     //DEBUG
+    private final Logger logger;
+    private boolean isLogTriggered = false;
     
     public BetterGuiMerchant (MerchantScreenHandler handler, PlayerInventory inv, Text title) {
         super(handler, inv, title);
         frames=0; //DEBUG
+        this.logger = LoggerFactory.getLogger("VTradePlus");
     }
     
     @Override
@@ -37,6 +46,7 @@ public class BetterGuiMerchant extends MerchantScreen implements AutoTrade {
         int safeguard = 0;
         while (!recipe.isDisabled()
         // TODO how do we check this now? &&  client.player.getInventory().getCursorStack().isEmpty()
+        &&  isSMPWhitelisted()
         &&  inputSlotsAreEmpty()
         &&  hasEnoughItemsInInventory(recipe)
         &&  canReceiveOutput(recipe.getSellItem())) {
@@ -45,6 +55,36 @@ public class BetterGuiMerchant extends MerchantScreen implements AutoTrade {
                 break;
             }
         }
+    }
+
+
+    private boolean isSMPWhitelisted() {
+        MinecraftClient mc = MinecraftClient.getInstance();
+        String address;
+
+        if(!mc.isInSingleplayer()) {
+            address = mc.getCurrentServerEntry().address;
+        } else {
+            address = "none";
+        }
+
+        if(isLogTriggered == false) {
+
+            //LoggerPrintStream logger = new LoggerPrintStream("VTradePlus", null);
+            //System.setOut(logger);
+            //System.out.println(address);
+            this.logger.info("Server Address: " + address);
+            isLogTriggered = true;
+
+        }
+
+        String[] whitelistedServers = ConfigurationHandler.whitelistedServerAddress().split(",");
+
+        if(!Arrays.asList(whitelistedServers).contains(address)) {
+            return false;
+        }
+
+        return true;
     }
     
     private boolean inputSlotsAreEmpty() {

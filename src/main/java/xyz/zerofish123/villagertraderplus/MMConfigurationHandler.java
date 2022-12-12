@@ -1,4 +1,4 @@
-package de.guntram.mcmod.easiervillagertrading;
+package xyz.zerofish123.villagertraderplus;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

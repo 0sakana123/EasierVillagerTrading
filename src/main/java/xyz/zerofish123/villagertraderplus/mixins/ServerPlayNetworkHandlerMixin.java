@@ -1,4 +1,4 @@
-package de.guntram.mcmod.easiervillagertrading.mixins;
+package xyz.zerofish123.villagertraderplus.mixins;
 
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import org.spongepowered.asm.mixin.Mixin;

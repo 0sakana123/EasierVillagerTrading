@@ -1,6 +1,6 @@
 {
     "required": true,
-    "package": "de.guntram.mcmod.easiervillagertrading.mixins",
+    "package": "xyz.zerofish123.villagertraderplus.mixins",
     "refmap": "EasierVillagerTrading-refmap.json",
     "minVersion": "0.6",
     "client": [

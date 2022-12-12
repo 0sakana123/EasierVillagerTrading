@@ -1,8 +1,9 @@
-package de.guntram.mcmod.easiervillagertrading;
+package xyz.zerofish123.villagertraderplus;
 
 import de.guntram.mcmod.fabrictools.ConfigChangedEvent;
 import de.guntram.mcmod.fabrictools.Configuration;
 import de.guntram.mcmod.fabrictools.ModConfigurationHandler;
+
 import java.io.File;
 
 public class ConfigurationHandler implements ModConfigurationHandler {
@@ -18,6 +19,7 @@ public class ConfigurationHandler implements ModConfigurationHandler {
         return instance;
     }
     private boolean swapShiftBehavior;
+    private String whitelistedServers;
 
     public void load(final File configFile) {
         if (config == null) {
@@ -37,6 +39,7 @@ public class ConfigurationHandler implements ModConfigurationHandler {
     
     private void loadConfig() {
         swapShiftBehavior=config.getBoolean("easiervillagertrading.config.swapshift", Configuration.CATEGORY_CLIENT, false, "easiervillagertrading.config.tt.swapshift");
+        whitelistedServers=config.getString("easiervillagertrading.config.allowedservers", Configuration.CATEGORY_CLIENT, "none", "easiervillagertrading.config.tt.allowedservers");
 
         if (config.hasChanged())
             config.save();
@@ -54,4 +57,6 @@ public class ConfigurationHandler implements ModConfigurationHandler {
     public static boolean isShiftSwapped() {
         return getInstance().swapShiftBehavior;
     }
+
+    public static String whitelistedServerAddress() { return getInstance().whitelistedServers; }
 }

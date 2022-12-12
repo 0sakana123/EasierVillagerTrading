@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.guntram.mcmod.easiervillagertrading;
+package xyz.zerofish123.villagertraderplus;
 
 /**
  *
