@@ -13,7 +13,7 @@
   },
 
   "license": "MIT",
-  "icon": "assets/easiervillagertrading/icon.png",
+  "icon": "icon.png",
 
   "environment": "client",
   "entrypoints": {

@@ -5,10 +5,6 @@
  */
 package xyz.zerofish123.villagertraderplus;
 
-import java.util.Arrays;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.MerchantScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -24,15 +20,12 @@ import net.minecraft.village.TradeOfferList;
  * @author gbl
  */
 public class BetterGuiMerchant extends MerchantScreen implements AutoTrade {
-    
-    private int frames;     //DEBUG
-    private final Logger logger;
-    private boolean isLogTriggered = false;
-    
+
+    //private final Logger logger;
+
     public BetterGuiMerchant (MerchantScreenHandler handler, PlayerInventory inv, Text title) {
         super(handler, inv, title);
-        frames=0; //DEBUG
-        this.logger = LoggerFactory.getLogger("VTradePlus");
+        //this.logger = LoggerFactory.getLogger("VTradePlus");
     }
     
     @Override
@@ -45,7 +38,7 @@ public class BetterGuiMerchant extends MerchantScreen implements AutoTrade {
         int safeguard = 0;
         while (!recipe.isDisabled()
         // TODO how do we check this now? &&  client.player.getInventory().getCursorStack().isEmpty()
-        &&  isSMPWhitelisted()
+        //&&  isSMPWhitelisted()
         &&  inputSlotsAreEmpty()
         &&  hasEnoughItemsInInventory(recipe)
         &&  canReceiveOutput(recipe.getSellItem())) {
@@ -57,41 +50,19 @@ public class BetterGuiMerchant extends MerchantScreen implements AutoTrade {
     }
 
 
-    private boolean isSMPWhitelisted() {
-        MinecraftClient mc = MinecraftClient.getInstance();
-        String address;
+    // this.logger.info("[VTradePlus] [Info]: Server Address: " + address);
 
-        if(!mc.isInSingleplayer()) {
-            address = mc.getCurrentServerEntry().address;
-        } else {
-            address = "none";
-        }
-
-        String[] whitelistedServers = ConfigurationHandler.whitelistedServerAddress().split(",");
-
-        if(!Arrays.asList(whitelistedServers).contains(address)) {
-            if(isLogTriggered == false) {
-                this.logger.info("[VTradePlus] [Info]: Server Address: " + address);
-                this.logger.info("[VTradePlus] [Info]: This server is not whitelisted!");
-                isLogTriggered = true;
-            }
-            return false;
-        }
-
-        return true;
-    }
-    
     private boolean inputSlotsAreEmpty() {
         boolean result =
             handler.getSlot(0).getStack().isEmpty()
         &&  handler.getSlot(1).getStack().isEmpty()
         &&  handler.getSlot(2).getStack().isEmpty();
-        if (frames % 300 == 0) { /*
+        //if (frames % 300 == 0) { /*
             System.out.println("stack 0: "+handler.getSlot(0).getStack().getTranslationKey()+"/"+handler.getSlot(0).getStack().getCount());
             System.out.println("stack 1: "+handler.getSlot(1).getStack().getTranslationKey()+"/"+handler.getSlot(0).getStack().getCount());
             System.out.println("stack 2: "+handler.getSlot(2).getStack().getTranslationKey()+"/"+handler.getSlot(0).getStack().getCount());
             System.out.println("result = "+result);
-        */ }
+        //*/ }
         return result;
                
     }

@@ -18,6 +18,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xyz.zerofish123.villagertraderplus.AutoTrade;
+import xyz.zerofish123.villagertraderplus.EasierVillagerTrading;
 
 @Mixin(MerchantScreen.class)
 public abstract class MerchantScreenMixin extends HandledScreen<MerchantScreenHandler> {
@@ -30,7 +31,7 @@ public abstract class MerchantScreenMixin extends HandledScreen<MerchantScreenHa
     
     @Inject(method="syncRecipeIndex", at=@At("RETURN"))
     public void tradeOnSetRecipeIndex(CallbackInfo ci) {
-        if (Screen.hasControlDown()) {
+        if (Screen.hasControlDown() || !EasierVillagerTrading.isModEnabledOnServer) {
             return;
         }
         this.onMouseClick(null, 0, 0, SlotActionType.QUICK_MOVE);

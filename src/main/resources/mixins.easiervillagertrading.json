@@ -4,6 +4,7 @@
     "refmap": "EasierVillagerTrading-refmap.json",
     "minVersion": "0.6",
     "client": [
+        "MinecraftClientMixin",
         "GuiMerchantMixin", "MerchantScreenMixin",
         "ServerPlayNetworkHandlerMixin"],
     "notused": [
