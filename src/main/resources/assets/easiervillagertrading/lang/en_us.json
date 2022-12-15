@@ -1,4 +1,7 @@
 {
+    "easiervillagertrading.config.allowedservers": "Server whitelist",
+    "easiervillagertrading.config.tt.allowedservers": "Server list with comma-separated which enable this mod.",
+
     "easiervillagertrading.config.swapshift": "Make 'trade all' default",
     "easiervillagertrading.config.tt.swapshift": "If false, use shift to trade all.\nIf true, normal click trades all, shift click trades once."
 }

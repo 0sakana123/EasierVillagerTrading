@@ -1,0 +1,7 @@
+{
+    "easiervillagertrading.config.allowedservers": "サーバーホワイトリスト",
+    "easiervillagertrading.config.tt.allowedservers": "Modの動作を許可するサーバーをカンマ区切りで指定します。接続時に使用するアドレスを使用してください。",
+
+    "easiervillagertrading.config.swapshift": "一括取引をデフォルトにする",
+    "easiervillagertrading.config.tt.swapshift": "シフトクリック無しでの一括取引を有効にします。有効の場合シフトクリックすると単体取引になります。"
+}

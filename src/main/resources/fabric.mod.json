@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "villagertraderplus",
+  "id": "easiervillagertrading",
   "version": "${version}",
 
   "name": "VillagerTraderPlus",
@@ -11,8 +11,7 @@
   ],
   "contact": {
     "homepage": "https://test.0sakana.xyz/",
-    "sources": "https://github.com/0sakana123/EasierVillagerTrading",
-    "twitter": "https://twitter.com/0sakana123"
+    "sources": "https://github.com/0sakana123/EasierVillagerTrading"
   },
 
   "license": "MIT",
@@ -22,6 +21,9 @@
   "entrypoints": {
     "client": [
       "xyz.zerofish123.villagertraderplus.EasierVillagerTrading"
+    ],
+    "modmenu": [
+      "xyz.zerofish123.villagertraderplus.MMConfigurationHandler"
     ]
   },
   "mixins": [
@@ -31,5 +33,17 @@
   "depends": {
     "fabricloader": ">=0.14.11",
           "minecraft": "1.19.2"
+  },
+
+  "recommends": {
+    "modmenu": "*"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.twitter": "https://twitter.com/0sakana123"
+      }
+    }
   }
 }

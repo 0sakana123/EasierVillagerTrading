@@ -39,7 +39,7 @@ public class ConfigurationHandler implements ModConfigurationHandler {
     
     private void loadConfig() {
         swapShiftBehavior=config.getBoolean("easiervillagertrading.config.swapshift", Configuration.CATEGORY_CLIENT, false, "easiervillagertrading.config.tt.swapshift");
-        whitelistedServers=config.getString("easiervillagertrading.config.allowedservers", Configuration.CATEGORY_CLIENT, "none", "easiervillagertrading.config.tt.allowedservers");
+        whitelistedServers=config.getString("easiervillagertrading.config.allowedservers", Configuration.CATEGORY_CLIENT, "localhost", "easiervillagertrading.config.tt.allowedservers");
 
         if (config.hasChanged())
             config.save();

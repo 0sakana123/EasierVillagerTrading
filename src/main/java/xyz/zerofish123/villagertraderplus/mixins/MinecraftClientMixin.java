@@ -28,6 +28,8 @@ public abstract class MinecraftClientMixin {
         String[] whitelistedServers = ConfigurationHandler.whitelistedServerAddress().split(",");
         if (Arrays.asList(whitelistedServers).contains(address) || Objects.equals(address, "singleplayer")) {
             EasierVillagerTrading.isModEnabledOnServer = true;
+        } else {
+            EasierVillagerTrading.isModEnabledOnServer = false;
         }
     }
 }

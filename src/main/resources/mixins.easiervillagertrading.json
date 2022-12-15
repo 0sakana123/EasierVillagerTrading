@@ -7,9 +7,9 @@
         "MinecraftClientMixin",
         "GuiMerchantMixin", "MerchantScreenMixin",
         "ServerPlayNetworkHandlerMixin"],
-    "notused": [
-        "GuiActionConfirmDebug", 
-        "ClickWindowC2SPacketDebugMixin"        
+    "unused": [
+        "GuiActionConfirmDebug",
+        "ClickWindowC2SPacketDebugMixin"
     ],
     "injectors": {
         "defaultRequire": 1
