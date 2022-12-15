@@ -4,12 +4,15 @@
   "version": "${version}",
 
   "name": "VillagerTraderPlus",
-  "description": "EasierVillagerTrading with SMP-whitelist",
+  "description": "gbl's EasierVillagerTrading with SMP-whitelist function.",
   "authors": [
+    "Guntram Blohm",
     "0sakana123"
   ],
   "contact": {
-    "website": "test.0sakana.xyz"
+    "homepage": "https://test.0sakana.xyz/",
+    "sources": "https://github.com/0sakana123/EasierVillagerTrading",
+    "twitter": "https://twitter.com/0sakana123"
   },
 
   "license": "MIT",
