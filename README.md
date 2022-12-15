@@ -8,9 +8,9 @@ This mod speeds up trading with villagers a lot, by changing the meaning of the 
 - Ctrl-clicking the trade will prepare, but not execute it (the default behaviour of the selection buttons)
 - In config file, add servers to whitelist with comma-separated.
 
-Older versions of the mod (before MC 1.14) brought their own GUI, as those versions didn't have a quick way to select a trade. With 1.14, this GUI got removed. If you've been using one of the older versions, don't think the new version doesn't work; it just doesn't show the GUI anymore as there's no real reason to have it.
+The mod generally works with servers as well. If it doesn't with yours, your server owner may have some AntiCheat plugin enabled. Use at your own risk.
 
-The mod generally works with servers as well. If it doesn't with yours, your server owner may have some AntiCheat plugin enabled; there's not much I can do in this case.
+For the above reasons, please add the server address you wish to enable to your config when using it in SMP. Multiple addresses can be separated by commas.
 
 To make sure the mod doesn't slow down your minecraft, 
 it has been optimized using

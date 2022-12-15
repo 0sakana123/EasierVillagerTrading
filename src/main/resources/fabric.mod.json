@@ -6,7 +6,7 @@
   "name": "VillagerTraderPlus",
   "description": "gbl's EasierVillagerTrading with SMP-whitelist function.",
   "authors": [
-    "Guntram Blohm",
+    "Giselbaer",
     "0sakana123"
   ],
   "contact": {
@@ -24,11 +24,10 @@
       "xyz.zerofish123.villagertraderplus.EasierVillagerTrading"
     ]
   },
+  "mixins": [
+    "mixins.easiervillagertrading.json"
+  ],
 
-          "mixins": [
-        "mixins.easiervillagertrading.json"
-      ],
-    
   "depends": {
     "fabricloader": ">=0.14.11",
           "minecraft": "1.19.2"
